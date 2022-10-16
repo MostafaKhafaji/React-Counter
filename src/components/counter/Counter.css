@@ -1,0 +1,12 @@
+.counter-wrapper {
+  width: 40%;
+  height: 250px;
+  background-color: #d8d9cf;
+  border-radius: 20px;
+  color: #e26868;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
