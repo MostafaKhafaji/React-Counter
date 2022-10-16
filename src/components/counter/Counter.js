@@ -7,14 +7,10 @@ const Counter = () => {
   const [counter, setCounter] = useState(0);
   const increaseCounter = () => {
     setCounter((prev) => ++prev);
-    if (counter === 10) {
-      alert("reset counter");
-      setCounter(0);
-    }
   };
   const decreaseCounter = () => {
     setCounter((prev) => --prev);
-    if (counter === -10) {
+    if (counter <= 0) {
       alert("reset counter");
       setCounter(0);
     }
