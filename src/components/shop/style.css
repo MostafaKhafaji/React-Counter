@@ -1,0 +1,13 @@
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item img {
+  min-height: 200px;
+}
+.item .card-title {
+  min-height: 100px;
+}

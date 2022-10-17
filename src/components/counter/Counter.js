@@ -16,11 +16,13 @@ const Counter = () => {
     }
   };
   return (
-    <div className="counter-wrapper">
-      <CounterVal countVal={counter} />
-      <div className="buttons">
-        <Button clickEv={increaseCounter} event="+" />
-        <Button clickEv={decreaseCounter} event="-" />
+    <div className="counter-wrapper w-100 d-flex justify-centent-center align-items-center">
+      <div className="counter mt-5 w-50 m-auto">
+        <CounterVal countVal={counter} />
+        <div className="buttons">
+          <Button clickEv={decreaseCounter} event="-" />
+          <Button clickEv={increaseCounter} event="+" />
+        </div>
       </div>
     </div>
   );
