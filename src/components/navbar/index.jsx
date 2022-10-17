@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { FaShoppingCart } from "react-icons/fa";
+
 const Header = ({ cart }) => {
   return (
     <>
@@ -11,7 +13,9 @@ const Header = ({ cart }) => {
         <Container>
           <Navbar.Brand>LOGO</Navbar.Brand>
           <Nav className="ms-auto gap-3">
-            <div className="ps-2 text-light">Cart {cart.length}</div>
+            <div className="ps-2 text-light">
+              {cart.length} <FaShoppingCart />
+            </div>
             <Link to="/">Home </Link>
             <Link to="/shop">Shop</Link>
             <Link to="/counter">Counter</Link>

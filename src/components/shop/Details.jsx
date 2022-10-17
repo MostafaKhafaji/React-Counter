@@ -16,7 +16,7 @@ const Details = () => {
   };
 
   return (
-    <div className="d-flex my-5">
+    <div className="d-flex my-5 align-items-center">
       <div className="w-50">
         <img className="w-50" src={product.image} alt={product.title} />
       </div>

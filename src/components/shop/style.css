@@ -6,8 +6,8 @@
 }
 
 .item img {
-  min-height: 200px;
+  height: 300px;
 }
 .item .card-title {
-  min-height: 100px;
+  min-height: 50px;
 }
