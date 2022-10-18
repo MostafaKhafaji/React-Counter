@@ -11,3 +11,6 @@
 .item .card-title {
   min-height: 50px;
 }
+.cart-img img {
+  height: 50px;
+}

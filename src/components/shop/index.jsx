@@ -3,8 +3,11 @@ import "./style.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-const Shop = ({ addToCart }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/storeSlice";
+const Shop = () => {
   const [products, setProducts] = useState([]);
+  const cart = useSelector((state) => state.cart.cartItems);
 
   const getData = () => {
     fetch("https://fakestoreapi.com/products")
@@ -15,6 +18,11 @@ const Shop = ({ addToCart }) => {
     getData();
   }, []);
 
+  const dispatch = useDispatch();
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+  console.log(cart);
   return (
     <>
       <div className="row my-5">
@@ -32,7 +40,10 @@ const Shop = ({ addToCart }) => {
                 <Card.Body>
                   <Card.Title>{`${product.title.slice(0, 30)}...`}</Card.Title>
                   <Card.Text>{product.price} EGP</Card.Text>
-                  <Button onClick={() => addToCart(product)} variant="primary">
+                  <Button
+                    onClick={() => handleAddToCart(product)}
+                    variant="primary"
+                  >
                     Add To Cart
                   </Button>
                 </Card.Body>
