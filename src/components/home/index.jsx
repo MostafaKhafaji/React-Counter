@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <div className="my-5">
         <h1>
-          Counter is <span className="text-danger">{counter}</span>{" "}
+          People Donate us with <span className="text-danger">{counter}$</span>
         </h1>
       </div>
     </>

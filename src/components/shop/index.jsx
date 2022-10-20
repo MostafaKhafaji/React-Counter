@@ -3,13 +3,14 @@ import "./style.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/storeSlice";
 import { BsCartPlus } from "react-icons/bs";
 import CustomSpinner from "../spinner/index";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Shop = () => {
   const [products, setProducts] = useState([]);
-  const cart = useSelector((state) => state.cart.cartItems);
 
   const getData = () => {
     fetch("https://fakestoreapi.com/products")
@@ -23,6 +24,15 @@ const Shop = () => {
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    toast.success("Item added to cart!", {
+      position: "bottom-left",
+      autoClose: 400,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
   return (
     <>
@@ -34,7 +44,7 @@ const Shop = () => {
                 <Card className="item">
                   <Link to={`/shop/details/${product.id}`}>
                     <Card.Img
-                      className="w-100 custom-img"
+                      className="w-100 p-3 custom-img"
                       variant="top"
                       src={product.image}
                     />
@@ -62,6 +72,18 @@ const Shop = () => {
           </div>
         )}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={400}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };

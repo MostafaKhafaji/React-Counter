@@ -26,8 +26,9 @@ const Header = () => {
                 <span className="cart-num position-absolute">{cart}</span>
               </div>
             </NavLink>
-            <NavLink to="/counter">Counter</NavLink>
-            <NavLink to="/about">About </NavLink>
+            <NavLink to="/counter">Donate</NavLink>
+            <NavLink to="/register">Register </NavLink>
+            <NavLink to="/login">Login </NavLink>
           </Nav>
         </Container>
       </Navbar>
